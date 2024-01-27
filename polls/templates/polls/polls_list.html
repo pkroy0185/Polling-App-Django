@@ -24,8 +24,11 @@
                 role="button"><i class="far fa-clock"></i> Date</a>
             <a class="btn btn-{% if 'vote' in request.GET %}warning{% else %}primary{% endif %} mb-3" href="?vote=True"
                 role="button"><i class="fas fa-poll"></i> Vote</a>
+            
+            {% if request.user.is_staff %}
 
-            <a class="btn btn-primary mb-3 float-right" href="{% url 'polls:add' %}" role="button">Add <i class="fas fa-plus"></i></a>
+                <a class="btn btn-primary mb-3 float-right" href="{% url 'polls:add' %}" role="button">Add <i class="fas fa-plus"></i></a>
+            {% endif %}
 
             <form class="form-inline">
                 <div class="form-group mr-sm-2 mb-2">
