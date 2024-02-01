@@ -22,16 +22,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = 'x*za6xf&_80ofdpae!yzq61g9ffikkx9$*iygbl$j7rr4wlf8t'
-# SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = 'x*za6xf&_80ofdpae!yzq61g9ffikkx9$*iygbl$j7rr4wlf8t'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
-# DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+# DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -90,9 +90,9 @@ DATABASES = {
     }
 }
 
-# DATABASE_URL = os.environ.get("DATABASE_URL")
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
-DATABASES['default'] = dj_database_url.parse("postgres://polling_app_db_user:gX9gOTPChiJCvoukiwb1tTvKhk2qN7F7@dpg-cmqkmticn0vc73dopsn0-a.oregon-postgres.render.com/polling_app_db")
+DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
 
 
 # Password validation
@@ -135,9 +135,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles')
 ]
-# if DEBUG:
-#    STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, 'static'),
-#    ]
-# else:
-#    STATIC_ROOT = os.path.join(BASE_DIR,'static')
