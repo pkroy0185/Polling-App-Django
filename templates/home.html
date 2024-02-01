@@ -1,21 +1,35 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block custom_css %}
-<link rel="stylesheet" href="{% static 'css/home_style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/home_style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 {% endblock custom_css %}
 
 
 {% block content %}
+
 <div class="container">
     <div class="row">
-        <div class="col">
-            <div id="home-content">
-                <h1>PollMe - Get Started!</h1>
-                <h3>Your Voice Matters!</h3>
+        <!-- <div class="col"> -->
+            <div id="home-content-premium">
+                <h1>Create Polls</h1>
+                <h5>Free for a month</h5>
+                <h6>Know more about Premium</h6>
                 <hr>
                 <a class="btn btn-light btn-lg" href="{% url 'polls:list' %}" role="button">Get Started !</a>
             </div>
-        </div>
+            <div id="home-content-regular">
+                <h1>PollMe</h1>
+                <h5>Your Voice Matters!</h5>
+                <hr>
+                <a class="btn btn-light btn-lg" href="{% url 'polls:list' %}" role="button">Get Started !</a>
+            </div>
+        <!-- </div> -->
     </div>
 </div>
+
 {% endblock content %}
+
+{% block custom_js %}
+<script type="text/javascript" src="{% static 'js/scripts.js' %}"> </script>
+{% endblock custom_js %}

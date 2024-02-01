@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 
+{% load static %}
+{% block custom_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home_style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% endblock custom_css %}
+
 {% block content %}
 <div class="container">
-    <div class="row center">
-        <div class="col-md-5 mx-auto p-5 shadow-sm border rounded border-primary">
+    <div class="row center justify-content-center">
+        <div class="col-md-10 mx-auto p-1 shadow-sm border rounded border-primary">
             <p>Already have an account? <a href="{% url 'accounts:login' %}">Login Here</a></p>
             {% if messages %}
             <div class="messages">
@@ -25,3 +31,7 @@
     </div>
 </div>
 {% endblock %}
+
+{% block custom_js %}
+<script type="text/javascript" src="{% static 'js/scripts.js' %}"> </script>
+{% endblock custom_js %}

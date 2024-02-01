@@ -4,6 +4,11 @@ html, body {
     margin: 0;
     color: white;
   }
+
+.text-center{
+    font-size: 17px;
+    color: rgb(35, 44, 110);
+}
 html{
     background-image: url('../img/background.jpg');
     background-size: cover;
@@ -11,7 +16,34 @@ html{
 body {
     background: rgba(0, 0, 0, 0.466);
 }
-#home-content{
+#home-content-premium{
+    height: 230px;
+    width: 300px;
+    background-color:rgb(49, 4, 67);
     text-align: center;
-    padding-top: 20%;
+    margin: 17% 5% 0% 5%;
+    padding: 2% 0% 0% 0%;
+    border-radius: 40px;
+    /* float: center; */
 }
+
+#home-content-premium:hover {
+    transform: scale(1.02); /* Scale the div on hover */
+    box-shadow: 0 0 10px rgba(213, 243, 144, 0.5); /* Add shadow effect on hover */
+  }
+
+#home-content-regular{
+    height: 230px;
+    width: 300px;;
+    background-color:rgb(49, 4, 67);
+    text-align: center;
+    margin: 17% 0% 0% 30%;
+    padding: 2% 0% 0% 0%;
+    border-radius: 40px;
+    /* float: left; */
+}
+
+#home-content-regular:hover {
+    transform: scale(1.02); /* Scale the div on hover */
+    box-shadow: 0 0 10px rgba(213, 243, 144, 0.5); /* Add shadow effect on hover */
+  }

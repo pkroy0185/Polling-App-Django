@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-expand-sm navbar-light bg-light mb-5">
     <a class="navbar-brand" href="{% url 'home' %}"><i class="fas fa-person-booth"></i></a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -23,7 +25,13 @@
             <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
             {% else %}
             <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
-            <a class="nav-link" href="{% url 'accounts:register' %}">Register</a>
+            <div class="dropdown">
+                <button onclick="toggleDropdown()" class="dropbtn">Register</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="{% url 'accounts:register' is_staff=True %}">As Staff</a>
+                  <a href="{% url 'accounts:register' is_staff=False %}">As User</a>
+                </div>
+              </div>
             {% endif %}
         </div>
     </div>

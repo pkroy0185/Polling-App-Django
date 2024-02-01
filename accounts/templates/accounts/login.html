@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
+{% load static %}
+{% block custom_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home_style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% endblock custom_css %}
+
 {% block content %}
     <div class="vh-100 d-flex justify-content-center align-items-center p-5" id="login-content">
         <div class="col-md-5 p-5 shadow-sm border rounded-5 border-primary bg-white">
@@ -32,10 +38,16 @@
                 </div>
             </form>
             <div class="mt-3">
-                <p class="mb-0  text-center">Don't have an account? <a href="{% url 'accounts:register' %}"
-                                                                       class="text-primary fw-bold">Sign
-                    Up</a></p>
+                <p class="mb-0  text-center">Don't have an account?
+                    <a href="{% url 'accounts:register' is_staff=True %}" class="text-primary fw-bold">Sign Up as Staff</a>
+                    &nbsp;&nbsp;
+                    <a href="{% url 'accounts:register' is_staff=False %}" class="text-primary fw-bold">Sign Up as User</a>
+                </p>
             </div>
         </div>
     </div>
 {% endblock %}
+
+{% block custom_js %}
+<script type="text/javascript" src="{% static 'js/scripts.js' %}"> </script>
+{% endblock custom_js %}
