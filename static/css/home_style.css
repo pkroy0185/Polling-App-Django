@@ -5,10 +5,79 @@ html, body {
     color: white;
   }
 
+.welcome-message {
+    text-align: center; 
+    font-size: bold;
+    background-color: rgb(154, 75, 228);
+    margin: 0px 20px 0px 0px;
+    padding: 2px 20px 2px 20px;
+    border-radius: 20px;
+}
+.welcome-message #username {
+    color: rgb(246, 182, 8);
+}
+
+.logout-button{
+    text-align: center; 
+    background-color: rgb(154, 75, 228);
+    color: black;
+    margin: 0px 10px 0px 0px;
+    padding: 2px 5px 2px 5px;
+    border-radius: 20px;
+    
+}
+
+.my-polls{
+    text-align: center; 
+    background-color: rgb(154, 75, 228);
+    color: black;
+    margin: 0px 10px 0px 0px;
+    padding: 2px 5px 2px 5px;
+    border-radius: 20px;
+    
+}
+
+.polls{
+    text-align: center; 
+    background-color: rgb(154, 75, 228);
+    color: black;
+    margin: 0px 10px 0px 0px;
+    padding: 2px 5px 2px 5px;
+    border-radius: 20px;
+    
+}
+
+.home-button{
+    text-align: center; 
+    background-color: rgb(154, 75, 228);
+    color: black;
+    margin: 0px 10px 0px 0px;
+    padding: 2px 5px 2px 5px;
+    border-radius: 20px;
+    
+}
+
+
+.login-button{
+    text-align: center; 
+    color: black;
+    background-color: rgb(154, 75, 228);
+    margin: 0px 10px 0px 0px;
+    padding: 5px 5px 0px 5px;
+    border-radius: 20px;
+    
+}
+
+
 .text-center{
     font-size: 17px;
-    color: rgb(35, 44, 110);
+    color: rgb(231, 232, 239);
 }
+
+.list-options{
+    color: black;
+}
+
 html{
     background-image: url('../img/background.jpg');
     background-size: cover;

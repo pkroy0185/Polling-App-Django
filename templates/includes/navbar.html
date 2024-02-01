@@ -8,30 +8,41 @@
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item active home-button">
+                <a class="nav-link" href="{% url 'home' %}"><b>Home</b><span class="sr-only">(current)</span></a>
             </li>
             {% if request.user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'polls:list' %}">Polls</a>
+            <li class="nav-item polls">
+                <a class="nav-link" href="{% url 'polls:list' %}"><b>Polls</b></a>
             </li>
             {% endif %}
         </ul>
         <div class="navbar-nav ml-auto">
             {% if request.user.is_authenticated %}
                 {% if request.user.is_staff %}
-                    <a class="nav-link" href="{% url 'polls:list_by_user' %}">My Polls</a>
+                    <div class="my-polls">
+                        <a class="nav-link" href="{% url 'polls:list_by_user' %}"><b>My Polls</b></a>
+                    </div>
                 {% endif %}
-            <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+            <div class="welcome-message">
+                <b>Welcome</b><br><span id="username"><b>{{ request.user.username }}</b></span>
+            </div>
+            <div class="logout-button">
+                <a class="nav-link" href="{% url 'accounts:logout' %}"><b>Logout</b></a>
+            </div>
             {% else %}
-            <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+            <div class="login-button">
+                <a class="nav-link" href="{% url 'accounts:login' %}"><b>Login</b></a>
+            </div>
             <div class="dropdown">
-                <button onclick="toggleDropdown()" class="dropbtn">Register</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="{% url 'accounts:register' is_staff=True %}">As Staff</a>
-                  <a href="{% url 'accounts:register' is_staff=False %}">As User</a>
+                <div class="register-button">
+                    <button onclick="toggleDropdown()" class="dropbtn"><b>Register</b></button>
                 </div>
-              </div>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="{% url 'accounts:register' is_staff=True %}"><b>As Staff</b></a>
+                  <a href="{% url 'accounts:register' is_staff=False %}"><b>As User</b></a>
+                </div>
+            </div>
             {% endif %}
         </div>
     </div>
