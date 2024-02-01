@@ -7,4 +7,3 @@ media
 venv
 .vscode/
 db.sqlite3
-pollme/settings.py
