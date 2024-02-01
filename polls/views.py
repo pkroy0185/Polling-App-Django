@@ -56,7 +56,7 @@ def list_by_user(request):
 
 @login_required()
 def polls_add(request):
-    if request.user.has_perm('polls.add_poll'):
+    if request.user.is_staff:
         if request.method == 'POST':
             form = PollAddForm(request.POST)
             if form.is_valid:

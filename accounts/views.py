@@ -38,7 +38,6 @@ def create_user(request, is_staff):
             form = StaffUserRegistrationForm(request.POST)
         else:
             form = UserRegistrationForm(request.POST)
-        print(form.is_valid())
         if form.is_valid():
             first_name = form.cleaned_data['first_name']
             last_name = form.cleaned_data['last_name']
@@ -64,6 +63,7 @@ def create_user(request, is_staff):
                     )
                     user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, password=password1, email=email)
                     user.is_staff = True
+                    user.save()
                     user.groups.add(group)
                     staff_user = StaffUser.objects.create(user=user, card_number=card_number, cardholder_name=cardholder_name, expiration_date=expiration_date, cvv=cvv)
                     staff_user.save()
